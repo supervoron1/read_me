@@ -42,4 +42,10 @@ class Article extends Model
         // используем Carbon
         return $this->created_at->diffForHumans();
     }
+
+    // перенесем логику в scope, чтобы сделать контроллер тоньше
+    public function scopeLastLimit($query, $limit)
+    {
+        return $query->with('tags', 'state')->orderBy('created_at', 'desc')->limit($limit)->get();
+    }
 }

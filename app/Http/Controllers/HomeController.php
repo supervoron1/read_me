@@ -9,7 +9,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-         $articles = Article::orderBy('created_at', 'desc')->get()->take(6);
-         return view('app.home', compact('articles'));
+//        $articles = Article::with('state', 'tags')->orderBy('created_at', 'desc')->take(6)->get();
+        // take() == limit()
+        // with - жадный запрос (сразу забираем все связанные данные)
+        // после вынесения логики в scope (@scopeLastLimit)
+        $articles = Article::lastLimit(6);
+        return view('app.home', compact('articles'));
     }
 }
