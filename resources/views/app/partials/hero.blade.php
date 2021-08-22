@@ -7,7 +7,6 @@
                         <a href="#">Разработчик PHP - Laravel</a>
                     </div>
                     <h2><a href="#">Тестовое задание</a></h2>
-
                 </div>
             </div>
         </div>
