@@ -11,6 +11,8 @@ class Comment extends Model
 
     protected $fillable = ['subject', 'body', 'article_id'];
 
+    public $timestamps = false;
+
     // комментарий относится к статье
     public function article()
     {
