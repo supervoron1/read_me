@@ -15,11 +15,11 @@
         <div class="container-fluid">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ activeMainLink() }}"
+                    <a class="nav-link menu-link {{ $mainLink }}"
                        href="{{ route('home') }}">Главная страница</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ activeArticleLink() }}"
+                    <a class="nav-link menu-link {{ $articleLink }}"
                        href="{{ route('article.index') }}">Каталог статей</a>
                 </li>
             </ul>
