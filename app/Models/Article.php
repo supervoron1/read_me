@@ -12,6 +12,9 @@ class Article extends Model
 
     protected $fillable = ['title', 'body', 'img', 'slug'];
 
+    // чтобы можно было использовать Carbon (по умолчанию знает только про created_at и updated_at)
+    public $dates = ['published_at'];
+
 //    protected $guarded = [];
 
     // статья может иметь много комментариев
@@ -40,7 +43,8 @@ class Article extends Model
     public function createdAtForHumans()
     {
         // используем Carbon
-        return $this->created_at->diffForHumans();
+//        return $this->created_at->diffForHumans();
+        return $this->published_at->diffForHumans();
     }
 
     // перенесем логику в scope, чтобы сделать контроллер тоньше

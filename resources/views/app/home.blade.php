@@ -14,6 +14,7 @@
                         <h5 class="card-title">{{$article->title}}</h5>
                         <p class="card-text">{{$article->getBodyPreview()}}</p>
                         <p>{{$article->createdAtForHumans()}}</p>
+                        <p>{{$article->published_at}}</p>
                         <a href="#" class="btn btn-primary">Подробнее</a>
                         <div class="mt-3">
                             <span class="badge bg-primary">{{$article->state->likes}} <i class="far fa-thumbs-up"></i></span>
