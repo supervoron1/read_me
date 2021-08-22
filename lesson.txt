@@ -2,3 +2,20 @@
 composer require barryvdh/laravel-debugbar --dev
 composer require --dev barryvdh/laravel-ide-helper
 composer require laravel/ui
+
+// нужные модели, фабрики, миграции (-fm)
+php artisan make:model Article -fm
+php artisan make:model Tag -fm
+php artisan make:model Comment -fm
+php artisan make:model State -fm
+
+// сводная таблица article_tag для создания отношения многие-ко-многим
+php artisan make:migration create_article_tag_table
+
+// пример создания отдельно миграции или фабрики
+php artisan make:migration create_articles_table
+php artisan make:factory ArticleFactory --model=Article
+
+
+// Laravel Best Practices
+https://github.com/alexeymezenin/laravel-best-practices
