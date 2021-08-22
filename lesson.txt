@@ -21,3 +21,6 @@ php artisan migrate:refresh --seed
 
 // Laravel Best Practices
 https://github.com/alexeymezenin/laravel-best-practices
+
+// обновить autoload files (vendor/composer/autoload_files.php)
+composer dump-autoload -o
