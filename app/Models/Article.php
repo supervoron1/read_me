@@ -52,4 +52,9 @@ class Article extends Model
     {
         return $query->with('tags', 'state')->orderBy('created_at', 'desc')->limit($limit)->get();
     }
+
+    public function scopeAllPaginate($query, $number)
+    {
+        return $query->with('tags', 'state')->orderBy('created_at', 'desc')->paginate($number);
+    }
 }
